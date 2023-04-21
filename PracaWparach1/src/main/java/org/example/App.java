@@ -1,65 +1,92 @@
 package org.example;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class App
 {
-    public static void main( String[] args ) {
-        System.out.println("Hello World!");
-//Zadanie 2:
-//Stwórz tablicę nazw europejskich miast i następnie wypisz je na następujące sposoby:
-//od początku do końca
-//od końca do początku
-//co drugie miasto
-//        String[] cities = new String[] { "Londyn", "Warszawa", "Paryż", "Madryt", "Budapeszt"};
-//
-//        for ( String city : cities ) {
-//            System.out.println(city);
-//        }
-//        System.out.println("Miasta wypisane od końca:");
-//        for (Integer i = cities.length - 1; i >= 0; i--) {
-//            System.out.println(cities[i]);
-//        }
-//Zadanie 3:
+    public static void main( String[] args )
+    {
+
+        String[] cities = new String[] { "London", "Warsaw", "Paris", "Madrid", "Budapest"};
+
+        for ( String city : cities ) {
+            System.out.println(city);
+
+        }
+        System.out.println("Cities listed backwards:");
+        for (Integer i = cities.length - 1; i >= 0; i--){
+            System.out.println(cities[i]);
+        }
+        System.out.println("Every second city is listed:");
+        for (Integer a = 0; a < cities.length; a += 2){
+            System.out.println(cities[a]);
+        }
+
+//        Zadanie 3:
 //Stwórz tablicę liczb zmiennoprzecinkowych i następnie oblicz sumę oraz średnią tych liczb.
 
+        Float[] numbers = new Float[5];
+        numbers[0] = 4.5f;
+        numbers[1] = 3.0f;
+        numbers[2] = 1.0f;
+        numbers[3] = 1.0f;
+        numbers[4] = 2.0f;
 
-        Float[] liczbyZ = new Float[5];
-        liczbyZ[0] = 4.5f;
-        liczbyZ[1] = 3.0f;
-        liczbyZ[2] = 1.0f;
-        liczbyZ[3] = 1.0f;
-        liczbyZ[4] = 2.0f;
+        Float sum = 0f;
 
-        Float suma = 0f;
-
-        for (int i = 0; i < liczbyZ.length; i++) {
-            suma += liczbyZ[i];
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
         }
-        System.out.println(suma);
+        System.out.println("Sum" + ":" + sum + ".");
 
-        Float srednia = 0f;
-        for (int i = 0; i < liczbyZ.length; i++) {
-            srednia = suma/liczbyZ.length;
+        Float average = 0f;
+        average = sum/numbers.length;
+
+        System.out.println("Average" + ":" + average + ".");
+
+
+        String [] arrayOfNames = new String [] {"Jan", "Zosia", "Ela", "Jan", "Kasia", "Jan"};
+       Integer count = 0;
+       for (Integer i = 0; i < arrayOfNames.length; i++ ) {
+           if (arrayOfNames[i].equals("Jan")) {
+               count++;
+           }
+
+       }
+       System.out.println("the name john occurs" + ":" + count + "times");
+
+
+        String [] names = new String [] {"Anna", "Zosia", "Ela", "Jan", "Kasia", "Leon"};
+
+        Set<String> name = new HashSet<>(Arrays.asList(names));
+        Integer index = Arrays.asList(names).indexOf("Jan") + 1;
+
+        System.out.println("Name index" + ":" +  index);
+
+
+
+    Integer[] numbersInt = { 4, 6, 8, 3, 9};
+    Integer min = numbersInt [0];
+    Integer max = numbersInt [0];
+
+    for (Integer i =1; i < numbersInt .length; i++) {
+        if (numbersInt [i] < min) {
+            min = numbersInt [i];
         }
-        System.out.println(srednia);
+        if (numbersInt [i] > max) {
+            max = numbersInt [i];
+        }
+    }
+
+    System.out.println("maximum element" + ":" + max);
+        System.out.println("minimum element" + ":" + min);
 
 
 
 
-//Zadanie 4:
-//Stwórz tablicę imion (z powtórzeniami) i następnie policz, ile razy występuje w niej imię "Jan".
 
-        String [] imiona = new String [] {"Kasia", "Zosia", "Ela", "Jan", "Kasia", "Kasia"};
-
-
-
-//Zadanie 5:
-//Stwórz tablicę imion (bez powtórzeń) i następnie podaj, na którym indexie znajduje się w niej imię "Jan".
-//Zadanie 6:
-//Stwórz tablicę liczb całkowitych i następnie znajdź największy i najmniejszy element tej tablicy.
-
-    }}
-
+    }
+}
